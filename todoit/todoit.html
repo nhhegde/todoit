@@ -1,0 +1,41 @@
+<head>
+  <title>ToDoIt</title>
+</head>
+
+<body>
+
+<!--
+  <h1>Welcome to ToDoIt!</h1>
+
+  <h3><em>True happiness comes from the joy of deeds well done</em></h3>
+    <h4>-Antoine de Saint-Exupery</h4>
+-->
+  <div class="container">
+    <header>
+      <h1>ToDoIt List</h1>
+      <label class="hide-completed">
+		  <input type="checkbox" checked="{{hideCompleted}}" />
+		  Hide Completed Tasks
+		</label>
+      <form class="new-task">
+    <input type="text" name="text" placeholder="Next Task Todo" />
+  </form>
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">{{text}}</span>
+  </li>
+</template>
