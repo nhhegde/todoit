@@ -1,7 +1,6 @@
 body {
   font-family: helvetica-neue;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #FFFFFF, #FFFFFF 10%);
+  background-color: #FCFEFF;
   background-attachment: fixed;
 
   position: absolute;
@@ -25,7 +24,7 @@ body {
 
 header {
   background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background-image: #75D6FF;
   padding: 20px 15px 15px 15px;
   position: relative;
 }

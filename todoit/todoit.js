@@ -1,4 +1,4 @@
-Tasks = new Mongo.Collection("tasks");]
+Tasks = new Mongo.Collection("tasks");
 
 
 if (Meteor.isClient) {
@@ -53,6 +53,12 @@ Template.task.events({
   }
 });
 
+Template.task.helpers({
+  isOwner: function () {
+    return this.owner === Meteor.userId();
+  }
+});
+
   Accounts.ui.config({
     passwordSignupFields: "USERNAME_ONLY"
   });
@@ -87,7 +93,6 @@ Meteor.methods({
   setChecked: function (taskId, setChecked) {
     var task = Tasks.findOne(taskId);
     if (task.private && task.owner !== Meteor.userId()) {
-      // If the task is private, make sure only the owner can check it off
       throw new Meteor.Error("not-authorized");
     }
 
@@ -97,7 +102,6 @@ Meteor.methods({
   setPrivate: function (taskId, setToPrivate) {
     var task = Tasks.findOne(taskId);
 
-    // Make sure only the task owner can make a task private
     if (task.owner !== Meteor.userId()) {
       throw new Meteor.Error("not-authorized");
     }
