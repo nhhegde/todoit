@@ -1,5 +1,6 @@
 body {
-  font-family: helvetica-neue;
+  font-family: helvetica;
+  color: #4C4C4C;
   background-color: #FCFEFF;
   background-attachment: fixed;
 
@@ -13,20 +14,29 @@ body {
   margin: 0;
 
   font-size: 14px;
+  width: 100%;
 }
 
-.container {
-  max-width: 600px;
+.hide-completed {
+    color: white;
+    font-weight: lighter;
+}
+
+.container-fluid {
+  /*max-width: 600px;*/
   margin: 0 auto;
   min-height: 100%;
   background: white;
+  padding-right: 0px;
+  padding-left: 0px; 
 }
 
 header {
-  background: #d2edf4;
-  background-image: #75D6FF;
+  background: #75E864;
+  background-image: #75E864;
   padding: 20px 15px 15px 15px;
   position: relative;
+  width: 100%;
 }
 
 #login-buttons {
@@ -39,6 +49,7 @@ h1 {
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
+  color: white;
 }
 
 form {
@@ -49,16 +60,38 @@ form {
 
 .new-task input {
   box-sizing: border-box;
-  padding: 10px 0;
-  background: transparent;
+  background: #BAE8B3;
   border: none;
   width: 100%;
   padding-right: 80px;
   font-size: 1em;
+  color: white;
 }
 
 .new-task input:focus{
   outline: 0;
+  border-color: white;
+}
+
+/* Styling Placeholder Text*/
+
+::-webkit-input-placeholder { /* WebKit browsers */
+   color:    white;
+   font-weight: lighter;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   font-weight: lighter;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   font-weight: lighter;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    white;
+   font-weight: lighter;
 }
 
 ul {
@@ -88,6 +121,7 @@ li .text {
 }
 
 li.checked {
+  opacity: 0.5;
   color: #888;
 }
 

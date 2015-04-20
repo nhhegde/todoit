@@ -10,7 +10,7 @@
   <h3><em>True happiness comes from the joy of deeds well done</em></h3>
     <h4>-Antoine de Saint-Exupery</h4>
 -->
-  <div class="container">
+  <div class="container-fluid">
     <header>
       	<h1>ToDoIt List ({{incompleteCount}})</h1>
       	<label class="hide-completed">
@@ -20,14 +20,14 @@
 
 		{{> loginButtons}}
 		{{#if currentUser}}
+      <br>
       <form class="new-task">
-    		<input type="text" name="text" placeholder="Next Task Todo" />
- 			</form>
+        <input class="form-control" type="text" name="text" placeholder="Next Task Todo" />
+      </form>
  		{{/if}}
 
 
     </header>
-
     <ul>
       {{#each tasks}}
         {{> task}}
